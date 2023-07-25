@@ -1,6 +1,9 @@
-# s21_matrix  
+# s21_matrix (Individual project)
 
-# Task
+## Score:
+The final score is 100% (max)
+
+## Task
 Implementation of the matrix.h library.   
 
 ### Matrix structure in C language:
