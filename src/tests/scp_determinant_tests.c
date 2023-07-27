@@ -3,12 +3,12 @@
  * Edit the original source file "out.tc" instead.
  */
 
-#include "s21_matrix_tests.h"
+#include "scp_matrix_tests.h"
 
-START_TEST(s21_determinant_0) {
+START_TEST(scp_determinant_0) {
   int rows = 3, cols = 9;
   matrix_t M1 = {0};
-  s21_create_matrix(rows, cols, &M1);
+  scp_create_matrix(rows, cols, &M1);
   double r0[] = {0.793926420168389,   0.024674707048111255, 0.7080368048034479,
                  0.00947754662233169, 0.9716562084150235,   0.6704737417382571,
                  0.31996147843358846, 0.4584615662699011,   0.8871917587936811};
@@ -28,17 +28,17 @@ START_TEST(s21_determinant_0) {
 
   double det = 0;
   double correct_det = 0;
-  int res = s21_determinant(&M1, &det);
-  ck_assert_double_eq_tol(det, correct_det, S21_EPS);
-  ck_assert_int_eq(res, S21_CALC_ERROR);
-  s21_remove_matrix(&M1);
+  int res = scp_determinant(&M1, &det);
+  ck_assert_double_eq_tol(det, correct_det, SCP_EPS);
+  ck_assert_int_eq(res, SCP_CALC_ERROR);
+  scp_remove_matrix(&M1);
 }
 END_TEST
 
-START_TEST(s21_determinant_1) {
+START_TEST(scp_determinant_1) {
   int rows = 9, cols = 9;
   matrix_t M1 = {0};
-  s21_create_matrix(rows, cols, &M1);
+  scp_create_matrix(rows, cols, &M1);
   double r0[] = {0.3704703182351474, 0.5824448570885606,  0.8441609891354462,
                  0.4728118472090358, 0.9043061105084269,  0.937783491861028,
                  0.4352506763542444, 0.48135517135025785, 0.02382905036763705};
@@ -81,17 +81,17 @@ START_TEST(s21_determinant_1) {
 
   double det = 0;
   double correct_det = -0.0806184778138818;
-  int res = s21_determinant(&M1, &det);
-  ck_assert_double_eq_tol(det, correct_det, S21_EPS);
-  ck_assert_int_eq(res, S21_OK);
-  s21_remove_matrix(&M1);
+  int res = scp_determinant(&M1, &det);
+  ck_assert_double_eq_tol(det, correct_det, SCP_EPS);
+  ck_assert_int_eq(res, SCP_OK);
+  scp_remove_matrix(&M1);
 }
 END_TEST
 
-START_TEST(s21_determinant_2) {
+START_TEST(scp_determinant_2) {
   int rows = 6, cols = 5;
   matrix_t M1 = {0};
-  s21_create_matrix(rows, cols, &M1);
+  scp_create_matrix(rows, cols, &M1);
   double r0[] = {0.6040440883684846, 0.9344303029963308, 0.6729528645358748,
                  0.8119070481751057, 0.4178956185952789};
   double r1[] = {0.5576666861934546, 0.7067474155583295, 0.6778663347596174,
@@ -116,17 +116,17 @@ START_TEST(s21_determinant_2) {
 
   double det = 0;
   double correct_det = 0;
-  int res = s21_determinant(&M1, &det);
-  ck_assert_double_eq_tol(det, correct_det, S21_EPS);
-  ck_assert_int_eq(res, S21_CALC_ERROR);
-  s21_remove_matrix(&M1);
+  int res = scp_determinant(&M1, &det);
+  ck_assert_double_eq_tol(det, correct_det, SCP_EPS);
+  ck_assert_int_eq(res, SCP_CALC_ERROR);
+  scp_remove_matrix(&M1);
 }
 END_TEST
 
-START_TEST(s21_determinant_3) {
+START_TEST(scp_determinant_3) {
   int rows = 1, cols = 1;
   matrix_t M1 = {0};
-  s21_create_matrix(rows, cols, &M1);
+  scp_create_matrix(rows, cols, &M1);
   double r0[] = {0.25221326329352967};
 
   for (int j = 0; j < cols; j++) {
@@ -135,17 +135,17 @@ START_TEST(s21_determinant_3) {
 
   double det = 0;
   double correct_det = 0.25221326329352967;
-  int res = s21_determinant(&M1, &det);
-  ck_assert_double_eq_tol(det, correct_det, S21_EPS);
-  ck_assert_int_eq(res, S21_OK);
-  s21_remove_matrix(&M1);
+  int res = scp_determinant(&M1, &det);
+  ck_assert_double_eq_tol(det, correct_det, SCP_EPS);
+  ck_assert_int_eq(res, SCP_OK);
+  scp_remove_matrix(&M1);
 }
 END_TEST
 
-START_TEST(s21_determinant_4) {
+START_TEST(scp_determinant_4) {
   int rows = 5, cols = 5;
   matrix_t M1 = {0};
-  s21_create_matrix(rows, cols, &M1);
+  scp_create_matrix(rows, cols, &M1);
   double r0[] = {0.3333414462627713, 0.37480478632510084, 0.14058330927305984,
                  0.18087659504072984, 0.1975375601574012};
   double r1[] = {0.4945297715476853, 0.12249968336331407, 0.053748650965932177,
@@ -167,17 +167,17 @@ START_TEST(s21_determinant_4) {
 
   double det = 0;
   double correct_det = -0.05002295238896294;
-  int res = s21_determinant(&M1, &det);
-  ck_assert_double_eq_tol(det, correct_det, S21_EPS);
-  ck_assert_int_eq(res, S21_OK);
-  s21_remove_matrix(&M1);
+  int res = scp_determinant(&M1, &det);
+  ck_assert_double_eq_tol(det, correct_det, SCP_EPS);
+  ck_assert_int_eq(res, SCP_OK);
+  scp_remove_matrix(&M1);
 }
 END_TEST
 
-START_TEST(s21_determinant_5) {
+START_TEST(scp_determinant_5) {
   int rows = 5, cols = 5;
   matrix_t M1 = {0};
-  s21_create_matrix(rows, cols, &M1);
+  scp_create_matrix(rows, cols, &M1);
   double r0[] = {0.23325947607330966, 0.14300274435390725, 0.8712369890596394,
                  0.8933939288351637, 0.3556725210868521};
   double r1[] = {0.38159165649456483, 0.3501596705407055, 0.47600311438092857,
@@ -199,17 +199,17 @@ START_TEST(s21_determinant_5) {
 
   double det = 0;
   double correct_det = 0.008502838369510957;
-  int res = s21_determinant(&M1, &det);
-  ck_assert_double_eq_tol(det, correct_det, S21_EPS);
-  ck_assert_int_eq(res, S21_OK);
-  s21_remove_matrix(&M1);
+  int res = scp_determinant(&M1, &det);
+  ck_assert_double_eq_tol(det, correct_det, SCP_EPS);
+  ck_assert_int_eq(res, SCP_OK);
+  scp_remove_matrix(&M1);
 }
 END_TEST
 
-START_TEST(s21_determinant_6) {
+START_TEST(scp_determinant_6) {
   int rows = 1, cols = 7;
   matrix_t M1 = {0};
-  s21_create_matrix(rows, cols, &M1);
+  scp_create_matrix(rows, cols, &M1);
   double r0[] = {0.047100821291088724, 0.10652275010452039,
                  0.036494911788591766, 0.453897112058275,
                  0.07600325243992279,  0.07423261951549831,
@@ -221,17 +221,17 @@ START_TEST(s21_determinant_6) {
 
   double det = 0;
   double correct_det = 0;
-  int res = s21_determinant(&M1, &det);
-  ck_assert_double_eq_tol(det, correct_det, S21_EPS);
-  ck_assert_int_eq(res, S21_CALC_ERROR);
-  s21_remove_matrix(&M1);
+  int res = scp_determinant(&M1, &det);
+  ck_assert_double_eq_tol(det, correct_det, SCP_EPS);
+  ck_assert_int_eq(res, SCP_CALC_ERROR);
+  scp_remove_matrix(&M1);
 }
 END_TEST
 
-START_TEST(s21_determinant_7) {
+START_TEST(scp_determinant_7) {
   int rows = 8, cols = 8;
   matrix_t M1 = {0};
-  s21_create_matrix(rows, cols, &M1);
+  scp_create_matrix(rows, cols, &M1);
   double r0[] = {0.037540901357332235, 0.1735147791508721, 0.9435308945071967,
                  0.3122610798446055,   0.8517406540010345, 0.6060343821107096,
                  0.24708693071298415,  0.7729118217790236};
@@ -270,17 +270,17 @@ START_TEST(s21_determinant_7) {
 
   double det = 0;
   double correct_det = 0.011673062453285693;
-  int res = s21_determinant(&M1, &det);
-  ck_assert_double_eq_tol(det, correct_det, S21_EPS);
-  ck_assert_int_eq(res, S21_OK);
-  s21_remove_matrix(&M1);
+  int res = scp_determinant(&M1, &det);
+  ck_assert_double_eq_tol(det, correct_det, SCP_EPS);
+  ck_assert_int_eq(res, SCP_OK);
+  scp_remove_matrix(&M1);
 }
 END_TEST
 
-START_TEST(s21_determinant_8) {
+START_TEST(scp_determinant_8) {
   int rows = 6, cols = 6;
   matrix_t M1 = {0};
-  s21_create_matrix(rows, cols, &M1);
+  scp_create_matrix(rows, cols, &M1);
   double r0[] = {0.06714285348949778, 0.5610290656530854, 0.5542921819581434,
                  0.31031838028392156, 0.8634500642184697, 0.6964938331568655};
   double r1[] = {0.7912935238004076, 0.043281627548552914, 0.39162054932632806,
@@ -305,17 +305,17 @@ START_TEST(s21_determinant_8) {
 
   double det = 0;
   double correct_det = -0.0014078337943211575;
-  int res = s21_determinant(&M1, &det);
-  ck_assert_double_eq_tol(det, correct_det, S21_EPS);
-  ck_assert_int_eq(res, S21_OK);
-  s21_remove_matrix(&M1);
+  int res = scp_determinant(&M1, &det);
+  ck_assert_double_eq_tol(det, correct_det, SCP_EPS);
+  ck_assert_int_eq(res, SCP_OK);
+  scp_remove_matrix(&M1);
 }
 END_TEST
 
-START_TEST(s21_determinant_9) {
+START_TEST(scp_determinant_9) {
   int rows = 5, cols = 5;
   matrix_t M1 = {0};
-  s21_create_matrix(rows, cols, &M1);
+  scp_create_matrix(rows, cols, &M1);
   double r0[] = {0.009611485775960715, 0.6851900214242267, 0.4011897396150713,
                  0.5868013235133138, 0.3979260130415254};
   double r1[] = {0.11223065138839194, 0.8740615294016914, 0.6677489728998356,
@@ -337,42 +337,42 @@ START_TEST(s21_determinant_9) {
 
   double det = 0;
   double correct_det = -0.006022441091945527;
-  int res = s21_determinant(&M1, &det);
-  ck_assert_double_eq_tol(det, correct_det, S21_EPS);
-  ck_assert_int_eq(res, S21_OK);
-  s21_remove_matrix(&M1);
+  int res = scp_determinant(&M1, &det);
+  ck_assert_double_eq_tol(det, correct_det, SCP_EPS);
+  ck_assert_int_eq(res, SCP_OK);
+  scp_remove_matrix(&M1);
 }
 END_TEST
 
-START_TEST(s21_determinant_10) {
-  ck_assert_int_eq(s21_determinant(NULL, NULL), S21_ERROR);
+START_TEST(scp_determinant_10) {
+  ck_assert_int_eq(scp_determinant(NULL, NULL), SCP_ERROR);
 }
 END_TEST
 
-START_TEST(s21_determinant_11) {
+START_TEST(scp_determinant_11) {
   double det = 0;
   INV_MATRIX
-  ck_assert_int_eq(s21_determinant(&inv_matrix, &det), S21_ERROR);
+  ck_assert_int_eq(scp_determinant(&inv_matrix, &det), SCP_ERROR);
 }
 END_TEST
 
-Suite *s21_determinant_tests(void) {
-  Suite *s1 = suite_create(PRE_TEST_HEADER "S21_DETERMINANT" POST_TEST_HEADER);
-  TCase *tc1_1 = tcase_create("S21_DETERMINANT");
+Suite *scp_determinant_tests(void) {
+  Suite *s1 = suite_create(PRE_TEST_HEADER "SCP_DETERMINANT" POST_TEST_HEADER);
+  TCase *tc1_1 = tcase_create("SCP_DETERMINANT");
 
   suite_add_tcase(s1, tc1_1);
-  tcase_add_test(tc1_1, s21_determinant_0);
-  tcase_add_test(tc1_1, s21_determinant_1);
-  tcase_add_test(tc1_1, s21_determinant_2);
-  tcase_add_test(tc1_1, s21_determinant_3);
-  tcase_add_test(tc1_1, s21_determinant_4);
-  tcase_add_test(tc1_1, s21_determinant_5);
-  tcase_add_test(tc1_1, s21_determinant_6);
-  tcase_add_test(tc1_1, s21_determinant_7);
-  tcase_add_test(tc1_1, s21_determinant_8);
-  tcase_add_test(tc1_1, s21_determinant_9);
-  tcase_add_test(tc1_1, s21_determinant_10);
-  tcase_add_test(tc1_1, s21_determinant_11);
+  tcase_add_test(tc1_1, scp_determinant_0);
+  tcase_add_test(tc1_1, scp_determinant_1);
+  tcase_add_test(tc1_1, scp_determinant_2);
+  tcase_add_test(tc1_1, scp_determinant_3);
+  tcase_add_test(tc1_1, scp_determinant_4);
+  tcase_add_test(tc1_1, scp_determinant_5);
+  tcase_add_test(tc1_1, scp_determinant_6);
+  tcase_add_test(tc1_1, scp_determinant_7);
+  tcase_add_test(tc1_1, scp_determinant_8);
+  tcase_add_test(tc1_1, scp_determinant_9);
+  tcase_add_test(tc1_1, scp_determinant_10);
+  tcase_add_test(tc1_1, scp_determinant_11);
 
   return s1;
 }

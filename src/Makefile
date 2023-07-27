@@ -14,13 +14,13 @@ OBJ_DIR=obj
 OBJ_DIR_GCOV=obj/$(GCOV_DIR)
 OBJ_DIR_TEST=obj/$(TEST_DIR)
 
-SRCS=$(wildcard $(SRC_DIR)/s21_*.c)
-SRCS_TEST=$(wildcard $(TEST_DIR)/s21_*.c)
+SRCS=$(wildcard $(SRC_DIR)/scp_*.c)
+SRCS_TEST=$(wildcard $(TEST_DIR)/scp_*.c)
 OBJS=$(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRCS))
 OBJS_TEST=$(patsubst $(TEST_DIR)/%.c,$(OBJ_DIR_TEST)/%.o,$(SRCS_TEST))
 OBJS_GCOV=$(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR_GCOV)/%.o,$(SRCS))
 
-LIB=s21_matrix.a
+LIB=scp_matrix.a
 TEST=test
 TEST_BUILD=test_build
 
